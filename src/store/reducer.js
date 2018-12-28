@@ -20,7 +20,8 @@ export default function (prevState = defaultState, action) {
   console.log('reducer',prevState, action);
 
   //拿到当前的prevState,根据action的不同操作 prevState 最后返回一个新的state
-  let state = prevState;
+  // let state = prevState;
+  let state = JSON.parse(JSON.stringify(prevState));
   if (action.type === SETCITY) {
     //给当前城市重新赋值
     state.curCity = action.data;

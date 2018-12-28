@@ -27,7 +27,7 @@ class Tabbar extends Component {
     )
   }
 }
-Tabbar.proptypes = {
+Tabbar.PropTypes = {
   tabs: PropTypes.array
 }
 export default Tabbar;
