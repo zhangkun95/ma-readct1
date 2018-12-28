@@ -54,5 +54,5 @@ class App1 extends Component {
   }
 }
 
-//  ReactDOM.render(<App1 />, mountNode);
-export default App1;
+ ReactDOM.render(<App1 />, mountNode);
+// export default App1;

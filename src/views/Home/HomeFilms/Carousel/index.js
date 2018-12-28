@@ -9,24 +9,24 @@ import img5 from './imagse/5.png';
 import img6 from './imagse/6.jpg';
 
 export default class Carouse extends Component {
-  state = {
-    data: ['1', '2', '3', '4','5','6'],
-    imgHeight: 176,
-  }
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     CarouselImg: [img1, img2, img3, img4, img5,img6]
-  //   }
+  // state = {
+  //   data: ['1', '2', '3', '4','5','6'],
+  //   imgHeight: 176,
   // }
-  componentDidMount() {
-    // simulate img loading
-    setTimeout(() => {
-      this.setState({
-        data: [img1, img2, img3, img4, img5,img6],
-      });
-    }, 100);
+  constructor(props) {
+    super(props);
+    this.state = {
+      CarouselImg: [img1, img2, img3, img4, img5,img6]
+    }
   }
+  // componentDidMount() {
+  //   // simulate img loading
+  //   setTimeout(() => {
+  //     this.setState({
+  //       data: [img1, img2, img3, img4, img5,img6],
+  //     });
+  //   }, 100);
+  // }
   render() {
     return (
       <WingBlank>
@@ -36,7 +36,7 @@ export default class Carouse extends Component {
           // beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
           // afterChange={index => console.log('slide to', index)}
         >
-        {this.state.data.map(val => (
+        {this.state.CarouselImg.map(val => (
             <a
               key={val}
               href="http://www.alipay.com"
@@ -54,24 +54,6 @@ export default class Carouse extends Component {
               />
             </a>
           ))}
-          {/* {this.state.data.map(val => (
-            <a
-              key={val}
-              href="http://www.alipay.com"
-              style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
-            >
-              <img
-                src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
-                alt=""
-                style={{ width: '100%', verticalAlign: 'top' }}
-                onLoad={() => {
-                  // fire window resize event to change height
-                  window.dispatchEvent(new Event('resize'));
-                  this.setState({ imgHeight: 'auto' });
-                }}
-              />
-            </a>
-          ))} */}
         </Carousel>
       </WingBlank>
     )
